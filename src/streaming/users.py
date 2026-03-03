@@ -10,3 +10,28 @@ Classes to implement:
     - FamilyAccountUser
     - FamilyMember
 """
+
+class User:
+    def __init__(self,user_id,name,age,sessions):
+        self.user_id = user_id
+        self.name = name
+        self.age = age
+        self.sessions = sessions
+
+    def add_session(self,session):
+        pass
+
+    def total_listening_seconds(self):
+        pass
+
+    def total_listening_minutes(self):
+        pass
+
+    def unique_tracks_listened(self):
+        pass
+
+
+class FreeUser(User):
+    def __init__(self,user_id,name,age,sessions, MAX_SKIPS_PER_HOUR = 6):
+        super().__init__(user_id,name,age,sessions)
+        self.MAX_SKIPS_PER_HOUR = MAX_SKIPS_PER_HOUR
