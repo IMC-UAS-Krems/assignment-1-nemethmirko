@@ -35,3 +35,8 @@ class FreeUser(User):
     def __init__(self,user_id,name,age,sessions, MAX_SKIPS_PER_HOUR = 6):
         super().__init__(user_id,name,age,sessions)
         self.MAX_SKIPS_PER_HOUR = MAX_SKIPS_PER_HOUR
+
+class PremiumUser(User):
+    def __init__(self,user_id,name,age,sessions, subscription_start):
+        super().__init__(user_id,name,age,sessions)
+        self.subscription_start = subscription_start
