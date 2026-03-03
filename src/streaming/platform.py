@@ -7,9 +7,14 @@ and provides query methods for analytics.
 Classes to implement:
   - StreamingPlatform
 """
+from src.streaming.albums import Album
+from src.streaming.artists import Artist
+from src.streaming.playlists import Playlist
+from src.streaming.sessions import ListeningSession
+from src.streaming.users import User
 
 class StreamingPlatform:
-    def __init__(self,name,catalogue,users,artists,albums,playlists,sessions):
+    def __init__(self,name:str,catalogue:dict[str,'Track'],users:dict[str,User],artists:dict[str,Artist],albums:dict[str,Album],playlists:dict[str,Playlist],sessions:list[ListeningSession]):
         self.name = name
         self.catalogue = catalogue
         self.users = users
