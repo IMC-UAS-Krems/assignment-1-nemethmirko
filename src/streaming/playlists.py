@@ -7,10 +7,9 @@ Classes to implement:
   - Playlist
     - CollaborativePlaylist
 """
-from src.streaming.users import User
 
 class Playlist:
-    def __init__(self,playlist_id:str,name:str,owner:User,tracks:list['Track']):
+    def __init__(self,playlist_id:str,name:str,owner,tracks:list):
         self.playlist_id = playlist_id
         self.name = name
         self.owner = owner
@@ -27,7 +26,7 @@ class Playlist:
 
 
 class CollaborativePlaylist(Playlist):
-    def __init__(self,playlist_id,name,owner,tracks,contributors:list[User]):
+    def __init__(self,playlist_id,name,owner,tracks,contributors:list):
         super().__init__(playlist_id,name,owner,tracks)
         self.contributors = contributors
 

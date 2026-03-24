@@ -10,12 +10,12 @@ Classes to implement:
     - FamilyAccountUser
     - FamilyMember
 """
-from src.streaming.sessions import ListeningSession
+
 import datetime
 
 
 class User:
-    def __init__(self, user_id: str, name: str, age: int, sessions: list[ListeningSession]):
+    def __init__(self, user_id: str, name: str, age: int, sessions: list):
         self.user_id = user_id
         self.name = name
         self.age = age
