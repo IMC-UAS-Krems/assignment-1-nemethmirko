@@ -22,7 +22,7 @@ class User:
         self.sessions = sessions
 
     def add_session(self, session):
-        pass
+        return self.sessions.append(session)
 
     def total_listening_seconds(self):
         pass
@@ -52,10 +52,10 @@ class FamilyAccountUser(User):
         self.sub_users = sub_users
 
     def add_sub_user(self, sub_user):
-        pass
+        return self.sub_users.append(sub_user)
 
     def all_members(self):
-        pass
+        return self.sub_users
 
 
 class FamilyMember(User):

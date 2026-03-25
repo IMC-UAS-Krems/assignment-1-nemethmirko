@@ -16,10 +16,10 @@ class Playlist:
         self.tracks = tracks
 
     def add_track(self,track):
-        pass
+        return self.tracks.append(track)
 
     def remove_track(self,track_id):
-        pass
+        return self.tracks.remove(track_id) #not sure
 
     def total_duration_seconds(self):
         pass
@@ -31,7 +31,7 @@ class CollaborativePlaylist(Playlist):
         self.contributors = contributors
 
     def add_contributor(self,user):
-        pass
+        return self.contributors.append(user)
 
     def remove_contributor(self,user):
-        pass
+        return self.contributors.remove(user) #not sure

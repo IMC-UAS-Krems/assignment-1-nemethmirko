@@ -24,7 +24,7 @@ class Track(ABC):
         self.genre = genre
 
     def duration_minutes(self):
-        pass
+        return self.duration_seconds/60
 
 
 class Song(Track):
