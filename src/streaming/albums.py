@@ -18,8 +18,10 @@ class Album:
     def add_track(self,track):
         return self.tracks.append(track)
 
-    def track_ids(self):
-        pass
+    def track_ids(self) ->set:
+        #Returns a set of all track id-s in this album
+        return {track.track_id for track in self.tracks}
 
-    def duration_seconds(self):
-        pass
+    def duration_seconds(self) ->int:
+        #Calculates the total duration of the album in seconds
+        return sum(track.duration_seconds for track in self.tracks)
