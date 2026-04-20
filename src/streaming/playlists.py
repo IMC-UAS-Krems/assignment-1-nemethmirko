@@ -17,7 +17,10 @@ class Playlist:
         self.tracks = []
 
     def add_track(self, track):
-        return self.tracks.append(track)
+        if track not in self.tracks:
+            return self.tracks.append(track)
+        else:
+            return "Track already exists"
 
     def remove_track(self, track_id):
         # Filters out the track we do not need by the ID provided
@@ -31,11 +34,17 @@ class Playlist:
 class CollaborativePlaylist(Playlist):
     def __init__(self, playlist_id, name, owner, contributors=None):
         super().__init__(playlist_id, name, owner)
-        self.contributors = contributors if contributors is not None else[owner]
+        self.contributors = contributors if contributors is not None else [owner]
 
     def add_contributor(self, user):
-        return self.contributors.append(user)
+        if user not in self.contributors:
+            return self.contributors.append(user)
+        else:
+            return "User is already in contributors"
 
     def remove_contributor(self, user):
-        self.contributors = [c for c in self.contributors if c.user != user]
-        return "User removed from contributors"
+        if user != self.owner:
+            self.contributors = [c for c in self.contributors if c != user]
+            return "User removed from contributors"
+        else:
+            return "You cannot remove the owner"

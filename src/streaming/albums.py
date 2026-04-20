@@ -16,7 +16,9 @@ class Album:
         self.tracks: list = []
 
     def add_track(self,track):
-        return self.tracks.append(track)
+        track.album = self
+        self.tracks.append(track)
+        self.tracks.sort(key=lambda x: x.track_number)
 
     def track_ids(self) ->set:
         #Returns a set of all track id-s in this album
